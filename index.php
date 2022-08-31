@@ -67,22 +67,30 @@ $content_faq = [
 
 <body>
     <header>
-
-            <div class="row">
-                <div class="col-10">
-                    <img src="logogoogle.png" alt="google-logo"><span>Privacy & Terms</span>
+        <div class="container-fluid">
+            <div class="row justify-content-between">
+                <div class="col-6">
+                    <img class="logo" src="./logogoogle.png" alt="google-logo"><span class="privacy px-2 fw-bold text-secondary">Privacy & Termini</span>
                 </div>
-                <div class="col-2">
-
+                <div class="col-6 d-flex justify-content-end">
+                    <img class="hamb me-3" src="./hamb-icon.jpg" alt="">
+                    <button class="btn btn-primary">Accedi</button>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-10 mt-1 py-3"><span class="px-2"><a href="">Introduzione</a></span><span class="px-3"><a href="">Norme sulla privacy</a></span><span class="px-3"><a href="">Termini di servizio</a></span><span class="px-3"><a href="">Tecnologie</a></span><span class="px-3"><a href="">Domande frequenti</a></span></div>
+            </div>
+        </div>
+        <div class="line">
+
+        </div>
     </header>
 
     <main>
-        <div class="container">
-            <div class="row">
-                <div class="col-8 offset-2">
-                    <?php foreach ($content_faq as $key => $value) : ?>
+        <div class="container mt-5">
+            <div class="row justify-content-center">
+                <div class="col">
+                    <?php foreach ($content_faq as $value) : ?>
                         <?= $value['question']; ?>
                         <?= $value['answer']; ?>
                     <?php endforeach; ?>
@@ -93,7 +101,12 @@ $content_faq = [
     </main>
 
     <footer>
-
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col"><a href="#">Google<a> - <a href="#">Tutto su Google<a> - <a href="#">Privacy<a> - <a href="#">Termini<a></div>
+                <div class="col"></div>
+            </div>
+        </div>
 
     </footer>
 </body>
@@ -101,12 +114,59 @@ $content_faq = [
 </html>
 
 <style>
-    header {
-        margin-top: 30px;
+
+    p{
+        padding-bottom: 20px;
+    }
+    footer {
+        height: 40px;
+        background-color: #F5F5F4;
     }
 
-    img {
-        width: 5%;
+    header a {
+        color: black;
+    }
+    footer a {
+        color: black;
+    }
+
+    a{
+        text-decoration: none
+    }
+
+    ;
+
+    span:hover {
+        color: blue;
+        border-bottom: 1px solid rgb(blue);
+    }
+
+    .line {
+        height: 2px;
+        background-color: grey;
+    }
+
+    .border-bottom {
+        color: blue;
+        height: 2px;
+    }
+
+    header {
+        padding-top: 30px;
+        height: 100px;
+    }
+
+    .logo {
+        width: 10%;
         height: auto;
+    }
+
+    .hamb {
+        width: 35px;
+        height: 40px;
+    }
+
+    .privacy {
+        font-size: larger;
     }
 </style>
